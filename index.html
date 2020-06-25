@@ -132,7 +132,7 @@
 			<button type="button" class="btn btn-danger btn-sm">Newest Game Date</button>
 			<button type="button" class="btn btn-danger btn-sm">Oldest Game Date</button>
 			<button type="button" class="btn btn-danger btn-sm">Most Liked</button>
-			<button type="button" class="btn btn-danger btn-sm">Leaked Liked</button>
+			<button type="button" class="btn btn-danger btn-sm">Least Liked</button>
 			<button type="button" class="btn btn-danger btn-sm">Most Disliked</button>
 			<button type="button" class="btn btn-danger btn-sm">Least Disliked</button>
 			<button type="button" class="btn btn-danger btn-sm">Most Comments</button>
@@ -150,13 +150,12 @@
 				<button type="button" class="btn btn-danger btn-sm">Inclusive</button> All tags will be present in the content<br>
 
 		</div>
-		<div class="col-lg-6">
+		<div class="col-lg-6 col-xs-2">
 			<h4 style="text-align:left;">Search: 
 			    <input type="text"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
 			</h4>
 
 		</div>
-
 
 		<div class="col-lg-12">
 			<h5>33 Results Found. Showing
@@ -166,7 +165,7 @@
 			  <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			    <span class="sr-only">Toggle Dropdown</span>
 			  </button>
-			  <div class="dropdown-menu">
+			  <div class="dropdown-menu" id="pageAmount">
 			    <a class="dropdown-item">5</a>
 			    <a class="dropdown-item">10</a>
 			    <a class="dropdown-item">20</a>
@@ -174,9 +173,10 @@
 			    <a class="dropdown-item">100</a>
 			  </div>
 			</div>
+			results per page</h5>
 
 
-			 per page</h5>
+
 		</div>
 		<div class="col-lg-12">
 			<h5>[Table Placeholder]</h5>
