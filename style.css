@@ -263,6 +263,14 @@ hr.light-100{
     width:10%;
   } 
 }
+@media (max-width:480px) { /* change depending on the mobiles you're targeting */
+    input, select { /* add further tags here according to your needs */
+        height:300px;
+        width:300px
+    }
+}
+
+
 
 
 /*---Firefox Bug Fix --*/
