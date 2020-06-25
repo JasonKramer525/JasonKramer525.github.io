@@ -203,7 +203,7 @@ hr.light-100{
 }
 @media (max-width: 1200px) {
   .carousel-caption {
-    top 50%;
+    top 30%;
   }
 
   .carousel-caption h1{
