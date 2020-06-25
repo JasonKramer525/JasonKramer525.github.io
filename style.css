@@ -260,14 +260,8 @@ hr.light-100{
     padding: .7rem;
   }
   #searchBox{
-    width:10%;
+    width:3%;
   } 
-}
-@media (max-width:480px) { /* change depending on the mobiles you're targeting */
-    input, select { /* add further tags here according to your needs */
-        height:300px;
-        width:300px
-    }
 }
 
 
