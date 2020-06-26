@@ -158,6 +158,20 @@ html, body{
   height: 100%;
 }
 
+table {
+    border: 1px solid lightgray;
+}
+table th {
+    background-color: silver;
+    text-align: center;
+    padding: 10px;
+}
+table td {
+    width: 200px;
+    border: 1px dotted silver;
+    overflow-wrap: break-word;
+}
+
 .fa-facebook:hover,
 .fa-instagram:hover,
 .fa-twitter:hover,
@@ -274,9 +288,12 @@ hr.light-100{
   }
   #searchBox{
     width:50%;
-  } 
-}
+  }
 
+  table td {
+    font-size:xx-small;
+  }
+} 
 
 
 
