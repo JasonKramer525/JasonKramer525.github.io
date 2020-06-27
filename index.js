@@ -51,16 +51,20 @@ function updatePage(){
 
 function checkButtons(){
 	if(Math.ceil(totalResults/pageTotal) == pageNumber){
-		document.getElementById("next-buttom").hidden="true"
+		document.getElementById("next-button").hidden="true"
+		document.getElementById("next-button-2").hidden="true"
 	}
 	else {
-		document.getElementById("next-buttom").removeAttribute("hidden")
+		document.getElementById("next-button").removeAttribute("hidden")
+		document.getElementById("next-button-2").removeAttribute("hidden")
 	}
 	if(pageNumber == 1){
 		document.getElementById("previous-button").hidden="true"
+		document.getElementById("previous-button-2").hidden="true"
 	}
 	else {
 		document.getElementById("previous-button").removeAttribute("hidden")
+		document.getElementById("previous-button-2").removeAttribute("hidden")
 	}
 }
 
