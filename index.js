@@ -75,8 +75,12 @@ function readData()
 		div.className = "videoWrapper"
 		if(load == 1)
 			div.innerHTML = "<iframe width='560' height='315' src='https://www.youtube.com/embed/" + videoID[currentCount-1] + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
-		if(load == 3)
+		else if(load == 2){
+			div.innerHTML = '<a href=https://www.youtube.com/watch?v=' + videoID[currentCount-1] + '" target="_blank" rel="noopener noreferrer" >' + "<img style='width:100%; display:block;' src='" + thumbnailID[currentCount-1] + "'></a>"
+		}
+		else if(load == 3)
 			div.innerHTML = '<a href=https://www.youtube.com/watch?v=' + videoID[currentCount-1] + '" target="_blank" rel="noopener noreferrer" >youtube.com/watch?v=' + videoID[currentCount-1] + '</a>'
+		
 		videoCell.appendChild(div)
 
 		let titleCell = row.insertCell(2)
