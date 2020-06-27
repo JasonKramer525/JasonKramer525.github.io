@@ -22,8 +22,13 @@ function setPageSize(size){
 	readData();
 }
 
-function updatePage(){
+function nextPage(){
 	currentPage = currentPage + pageTotal;
+	readData();
+}
+
+function lastPage(){
+	currentPage = currentPage - pageTotal;
 	readData();
 }
 
@@ -50,12 +55,12 @@ function readData()
 		videoCell.className = "col-5"
 		let div = document.createElement('div');
 		div.className = "videoWrapper"
-		div.innerHTML = "<iframe width='560' height='315' src='https://www.youtube.com/embed/" + videoID[currentCount] + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+		div.innerHTML = "<iframe width='560' height='315' src='https://www.youtube.com/embed/" + videoID[currentCount-1] + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
 		videoCell.appendChild(div)
 
 		let titleCell = row.insertCell(2)
 		titleCell.className = "col-3"
-		text = document.createTextNode(videoTitle[currentCount]);
+		text = document.createTextNode(videoTitle[currentCount-1]);
 		titleCell.append(text)
 
 
