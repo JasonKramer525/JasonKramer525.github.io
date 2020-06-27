@@ -50,12 +50,15 @@ function changeLoad(val){
 	}
 }
 
-function readData()
-{
+function onLoad(){
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		changeLoad(2);
 	}
-	
+	readData();
+}
+
+function readData()
+{
 	var tableBody = document.getElementById("table-body");
 	tableBody.innerHTML ="";
 
