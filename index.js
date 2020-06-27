@@ -71,6 +71,7 @@ function readData()
 	let currentCount = currentPage;
 	for(ID in videoID){
 		currentCount = currentCount + 1;
+		if(videoID[currentCount-1]) {
 		let row = tableBody.insertRow();
 		row.className = "d-flex"
 		let countCell = row.insertCell(0);
@@ -100,6 +101,8 @@ function readData()
 
 
 		console.log(videoID[ID])
+
+		}
 
 		if(ID>pageTotal-2){
 			break;
