@@ -156,10 +156,10 @@
 				<button type="button" class="btn btn-danger btn-sm">Inclusive</button> All tags will be present<br>
 
 				<br>
-				Because loading videos can be cpu intensive, you have the option to load links or thumbnails instead.<br>
-				<button type="button" class="btn btn-success btn-sm">Video</button>
-				<button type="button" class="btn btn-danger btn-sm">Thumbnail</button>
-				<button type="button" class="btn btn-danger btn-sm">Link</button>
+				For quicker load times, choose to show thumbnails or links instead of videos<br>
+				<button type="button" class="btn btn-success btn-sm" onclick="changeLoad(1);" id="media-1">Video</button>
+				<button type="button" class="btn btn-danger btn-sm" id="media-2">Thumbnail</button>
+				<button type="button" class="btn btn-danger btn-sm" onclick="changeLoad(3);" id="media-3">Link</button>
 
 
 		</div>
@@ -178,10 +178,13 @@
 			    <span class="sr-only">Toggle Dropdown</span>
 			  </button>
 			  <div class="dropdown-menu" id="pageAmount">
+			  	<a class="dropdown-item" onclick="setPageSize(1)">1</a>
 			    <a class="dropdown-item" onclick="setPageSize(5)">5</a>
 			    <a class="dropdown-item" onclick="setPageSize(10)">10</a>
 			    <a class="dropdown-item" onclick="setPageSize(15)">15</a>
 			    <a class="dropdown-item" onclick="setPageSize(20)">20</a>
+			    <a class="dropdown-item" onclick="setPageSize(50)">50</a>
+			    <a class="dropdown-item" onclick="setPageSize(100)">100</a>
 			  </div>
 			</div>
 			results per page</h5>

@@ -1,5 +1,6 @@
 var pageTotal = 5;
 var currentPage = 0;
+var load = 1; //video
 
 function changeColor(name) {
 	let button = document.getElementById(name);
@@ -32,6 +33,23 @@ function lastPage(){
 	readData();
 }
 
+function changeLoad(val){
+	for(let i=1; i<4; i++){
+		var button = document.getElementById("media-" + i);
+		console.log(button)
+		if(i==val){
+			button.setAttribute("class","btn btn-success btn-sm");
+		}
+		else {
+			button.setAttribute("class","btn btn-danger btn-sm");
+		}
+	}
+	if(val != load){
+	load = val;
+	readData();
+	}
+}
+
 function readData()
 {
 	var tableBody = document.getElementById("table-body");
@@ -55,7 +73,10 @@ function readData()
 		videoCell.className = "col-5"
 		let div = document.createElement('div');
 		div.className = "videoWrapper"
-		div.innerHTML = "<iframe width='560' height='315' src='https://www.youtube.com/embed/" + videoID[currentCount-1] + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+		if(load == 1)
+			div.innerHTML = "<iframe width='560' height='315' src='https://www.youtube.com/embed/" + videoID[currentCount-1] + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+		if(load == 3)
+			div.innerHTML = '<a href=https://www.youtube.com/watch?v=' + videoID[currentCount-1] + '" target="_blank" rel="noopener noreferrer" >youtube.com/watch?v=' + videoID[currentCount-1] + '</a>'
 		videoCell.appendChild(div)
 
 		let titleCell = row.insertCell(2)
