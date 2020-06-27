@@ -1,5 +1,7 @@
 var pageTotal = 5;
+var totalResults = 496;
 var currentPage = 0;
+var pageNumber = 1;
 var load = 1; //video
 
 function changeColor(name) {
@@ -15,23 +17,53 @@ function changeColor(name) {
 
 function setPageSize(size){
 	currentPage = 0;
+	pageNumber = 1;
 	console.log(size)
 	pageTotal = size;
 	var pageSelect = document.getElementById("page-select");
 	console.log(pageSelect)
 	pageSelect.innerHTML = size;
 	readData();
+	updatePage();
+	checkButtons();
 }
 
 function nextPage(){
+	pageNumber++;
 	currentPage = currentPage + pageTotal;
 	readData();
+	updatePage();
+	checkButtons();
 }
 
 function lastPage(){
+	pageNumber--;
 	currentPage = currentPage - pageTotal;
 	readData();
+	updatePage();
+	checkButtons();
 }
+
+function updatePage(){
+	var pageVisual = document.getElementById("current-page");
+	pageVisual.innerHTML="Showing Page " + pageNumber +  " of " + (Math.ceil(totalResults/pageTotal));
+}
+
+function checkButtons(){
+	if(Math.ceil(totalResults/pageTotal) == pageNumber){
+		document.getElementById("next-buttom").hidden="true"
+	}
+	else {
+		document.getElementById("next-buttom").removeAttribute("hidden")
+	}
+	if(pageNumber == 1){
+		document.getElementById("previous-button").hidden="true"
+	}
+	else {
+		document.getElementById("previous-button").removeAttribute("hidden")
+	}
+}
+
 
 function changeLoad(val){
 	for(let i=1; i<4; i++){
@@ -57,6 +89,7 @@ function onLoad(){
 		searchBox.style.transform = "translateY(0px)"
 	}
 	readData();
+	checkButtons();
 }
 
 function readData()
