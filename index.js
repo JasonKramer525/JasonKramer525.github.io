@@ -52,6 +52,10 @@ function changeLoad(val){
 
 function readData()
 {
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		changeLoad(2);
+	}
+	
 	var tableBody = document.getElementById("table-body");
 	tableBody.innerHTML ="";
 
@@ -97,6 +101,7 @@ function readData()
 		}
 	}
 }
+
 
 function sortWithIndeces(toSort) {
   for (var i = 0; i < toSort.length; i++) {
