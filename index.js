@@ -53,6 +53,8 @@ function changeLoad(val){
 function onLoad(){
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		changeLoad(2);
+		var searchBox = document.getElementById("searchBox");
+		searchBox.style.transform = "translateY(0px)"
 	}
 	readData();
 }
