@@ -100,11 +100,12 @@ function readData()
 {
 	var tableBody = document.getElementById("table-body");
 	tableBody.innerHTML ="";
+	var currentSort = videoID.slice(0) //clone the array
 
-	let indeces = sortWithIndeces(videoID).sortIndices;
-	console.log(indeces)
-	videoTitle = updateArray(videoTitle,indeces)
-	thumbnailID = updateArray(thumbnailID,indeces)
+	let indeces = sortWithIndeces(currentSort).sortIndices;
+
+	//videoTitle = updateArray(videoTitle,indeces)
+	//thumbnailID = updateArray(thumbnailID,indeces)
 
 	let currentCount = currentPage;
 	for(ID in videoID){
@@ -123,18 +124,18 @@ function readData()
 
 		if(load == 1){
 			div.className = "videoWrapper";
-			div.innerHTML = "<iframe width='560' height='315' src='https://www.youtube.com/embed/" + videoID[currentCount-1] + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+			div.innerHTML = "<iframe width='560' height='315' src='https://www.youtube.com/embed/" + videoID[indeces[currentCount-1]] + "'frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
 		} else if(load == 2){
-			div.innerHTML = '<a href=https://www.youtube.com/watch?v=' + videoID[currentCount-1] + '" target="_blank" rel="noopener noreferrer" >' + "<img style='width:100%; display:block;' src='" + thumbnailID[currentCount-1] + "'></a>"
+			div.innerHTML = '<a href=https://www.youtube.com/watch?v=' + videoID[indeces[currentCount-1]] + '" target="_blank" rel="noopener noreferrer" >' + "<img style='width:100%; display:block;' src='" + thumbnailID[indeces[currentCount-1]] + "'></a>"
 		}
 		else
-			div.innerHTML = '<a href=https://www.youtube.com/watch?v=' + videoID[currentCount-1] + '" target="_blank" rel="noopener noreferrer" >youtube.com/watch?v=' + videoID[currentCount-1] + '</a>'
+			div.innerHTML = '<a href=https://www.youtube.com/watch?v=' + videoID[indeces[currentCount-1]] + '" target="_blank" rel="noopener noreferrer" >youtube.com/watch?v=' + videoID[indeces[currentCount-1]] + '</a>'
 		
 		videoCell.appendChild(div)
 
 		let titleCell = row.insertCell(2)
 		titleCell.className = "col-3"
-		text = document.createTextNode(videoTitle[currentCount-1]);
+		text = document.createTextNode(videoTitle[indeces[currentCount-1]]);
 		titleCell.append(text)
 
 
