@@ -67,6 +67,7 @@ function readData()
 	let indeces = sortWithIndeces(videoID).sortIndices;
 	console.log(indeces)
 	videoTitle = updateArray(videoTitle,indeces)
+	thumbnailID = updateArray(thumbnailID,indeces)
 
 	let currentCount = currentPage;
 	for(ID in videoID){
