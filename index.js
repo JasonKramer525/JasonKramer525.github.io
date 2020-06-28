@@ -23,7 +23,7 @@ function setSort(val){
 
 	document.getElementById('sort-val').innerHTML = sortRequirements[chosenSort].name
 
-	for(let i=0;i<17;i++){
+	for(let i=0;i<18;i++){
 		let button = document.getElementById('sort-'+i)
 		if(i == val){
 			button.setAttribute("class","btn btn-success btn-sm");
@@ -181,11 +181,9 @@ console.log(chosenSort)
 			var sortText;
 			if(sortRequirements[chosenSort].number=="true"){
 				sortText = document.createTextNode(numberWithCommas(sortRequirements[chosenSort].displayArray[[indeces[currentCount-1]]]))
-				//sortText = document.createTextNode(numberWithCommas(viewCount[[indeces[currentCount-1]]]))
 			}
 			else {
 				sortText = document.createTextNode(sortRequirements[chosenSort].displayArray[[indeces[currentCount-1]]])
-				//sortText = document.createTextNode(viewCount[[indeces[currentCount-1]]])
 			}
 
 			sortCell.append(sortText)
