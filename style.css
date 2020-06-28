@@ -184,7 +184,6 @@ table th {
 table td {
     width: 200px;
     border: 1px dotted silver;
-    overflow-wrap: break-word;
 }
 
 .fa-facebook:hover,
