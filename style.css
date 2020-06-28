@@ -13,10 +13,26 @@ html, body{
 
 .dropdown-menu#pageAmount {
     background-color:#6c757d;
+}
+
+.dropdown-menu#filterDropdown {
+    background-color:#dc3545;
+  }
+
+.dropdown-item#filterPicked {
+    background-color:#28a745;
   }
 
 .dropdown-menu#pageAmount .dropdown-item:focus,.dropdown-menu#pageAmount .dropdown-item:active {
    background-color:#565D7D;
+}
+
+.dropdown-menu#filterDropdown .dropdown-item#filterPicked:focus,.dropdown-menu#filterDropdown .dropdown-item#filterPicked:active {
+   background-color:#007bff;
+}
+
+.dropdown-item#filterPicked:hover {
+    background-color: white;
 }
 
 .navbar-nav > .open > a{
@@ -207,6 +223,11 @@ hr.light {
 
 .btn-danger,.btn-success{
   margin-top: .4rem;
+}
+
+.dropdown-menu{
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 footer a {

@@ -36,7 +36,6 @@ function setSort(val){
 	readData();
 }
 
-
 function setPageSize(size){
 	currentPage = 0;
 	pageNumber = 1;

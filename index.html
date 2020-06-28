@@ -94,7 +94,42 @@
 	</div>
 	<div class="col-lg-6">
 			<h4 style="text-align:left;">Filters: 
-			<button type="button" class="btn btn-danger btn-sm" onclick="changeColor(0);" id="0">Sports</button>
+			<div class="btn-group">
+			  <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  	 <span id="page-select" class="caret">Sports</span>
+			    <span class="sr-only">Toggle Dropdown</span>
+			  </button>
+			  <div class="dropdown-menu" id="filterDropdown">
+			  	<input style="height:2em; transform: translateY(-8px)" type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+				<a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
+			    <a class="dropdown-item" onclick="">Football</a>
+			    <a class="dropdown-item" onclick="">Hockey</a>
+			    <a class="dropdown-item" onclick="">Soccer</a>
+			    <a class="dropdown-item" onclick="">Basketball</a>
+			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
+			    <a class="dropdown-item" onclick="">Football</a>
+			    <a class="dropdown-item" onclick="">Hockey</a>
+			    <a class="dropdown-item" onclick="">Soccer</a>
+			    <a class="dropdown-item" onclick="">Basketball</a>
+			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
+			    <a class="dropdown-item" onclick="">Football</a>
+			    <a class="dropdown-item" onclick="">Hockey</a>
+			    <a class="dropdown-item" onclick="">Soccer</a>
+			    <a class="dropdown-item" onclick="">Basketball</a>
+			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
+			    <a class="dropdown-item" onclick="">Football</a>
+			    <a class="dropdown-item" onclick="">Hockey</a>
+			    <a class="dropdown-item" onclick="">Soccer</a>
+			    <a class="dropdown-item" onclick="">Basketball</a>
+			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
+			    <a class="dropdown-item" onclick="">Football</a>
+			    <a class="dropdown-item" onclick="">Hockey</a>
+			    <a class="dropdown-item" onclick="">Soccer</a>
+			    <a class="dropdown-item" onclick="">Basketball</a>
+			    <a class="dropdown-item" onclick="">Misc</a>
+			  </div>
+			</div>
+
 			<button type="button" class="btn btn-danger btn-sm">Teams</button>
 			<button type="button" class="btn btn-danger btn-sm">Players</button>
 			<button type="button" class="btn btn-danger btn-sm">Umpires</button>
