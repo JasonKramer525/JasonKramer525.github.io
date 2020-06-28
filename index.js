@@ -129,9 +129,16 @@ function readData()
 
 	if(sortRequirements[chosenSort].value == "integer") {
 		indeces = sortWithIndecesValues(currentSort).sortIndices;
+		console.log(currentSort)
 	}
 	else{
 		indeces = sortWithIndeces(currentSort).sortIndices;
+	}
+
+console.log(chosenSort)
+	if(chosenSort == 5){
+		var numOfEmpty = currentSort.filter(function(x){ return x === ""; }).length;
+		indeces = indeces.slice(numOfEmpty).concat(indeces.slice(0,numOfEmpty))
 	}
 
 	if(sortRequirements[chosenSort].type == "reverse") {
@@ -173,10 +180,12 @@ function readData()
 			sortCell.className = 'col-3'
 			var sortText;
 			if(sortRequirements[chosenSort].number=="true"){
-				sortText = document.createTextNode(numberWithCommas(viewCount[[indeces[currentCount-1]]]))
+				sortText = document.createTextNode(numberWithCommas(sortRequirements[chosenSort].displayArray[[indeces[currentCount-1]]]))
+				//sortText = document.createTextNode(numberWithCommas(viewCount[[indeces[currentCount-1]]]))
 			}
 			else {
-				sortText = document.createTextNode(viewCount[[indeces[currentCount-1]]])
+				sortText = document.createTextNode(sortRequirements[chosenSort].displayArray[[indeces[currentCount-1]]])
+				//sortText = document.createTextNode(viewCount[[indeces[currentCount-1]]])
 			}
 
 			sortCell.append(sortText)
