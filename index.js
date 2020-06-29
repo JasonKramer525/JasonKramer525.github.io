@@ -254,5 +254,20 @@ function filterDropdown(name, input){
 }
 
 function filterPicked(filter) {
-	console.log(filter)
+	var button = document.getElementById(filter)
+	var bonusButtons = document.getElementById("bonusButtons")
+	if(button.className.includes(" filterPicked")){
+		button.className = button.className.replace(" filterPicked","")
+		var newButton = document.getElementById("temp-" + filter)
+		newButton.parentNode.removeChild(newButton)
+	}
+	else {
+		button.className += " filterPicked"
+		bonusButtons.innerHTML = bonusButtons.innerHTML + '<button type="button" id = "temp-' + filter
+		+  '"class="btn btn-success btn-sm"><i class="fa fa-times-circle" aria-hidden="true"></i> ' 
+		+ filter + '</button> '
+		var newButton = document.getElementById("temp-" + filter)
+		console.log(newButton)
+		newButton.setAttribute("onclick","filterPicked('" + filter + "')")
+	}
 }

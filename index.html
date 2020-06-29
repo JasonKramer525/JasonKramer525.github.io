@@ -102,13 +102,12 @@
 			    <span class="sr-only">Toggle Dropdown</span>
 			  </button>
 			  <div class="dropdown-menu" id="filterDropdown">
-			  	<input style="height:2em; transform: translateY(-8px)" type="text" placeholder="Search.." id="myInput" onkeyup="filterDropdown()">
-				<a class="dropdown-item filterPicked" onclick="">Baseball</a>
-			    <a class="dropdown-item" onclick="">Football</a>
-			    <a class="dropdown-item" onclick="">Hockey</a>
-			    <a class="dropdown-item" onclick="">Soccer</a>
-			    <a class="dropdown-item" onclick="">Basketball</a>
-			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
+				<a class="dropdown-item" id = "Baseball" onclick="filterPicked('Baseball')">Baseball</a>
+			    <a class="dropdown-item" id = "Football" onclick="filterPicked('Football')">Football</a>
+			    <a class="dropdown-item" id = "Hockey" onclick="filterPicked('Hockey')">Hockey</a>
+			    <a class="dropdown-item" id = "Soccer" onclick="filterPicked('Soccer')">Soccer</a>
+			    <a class="dropdown-item" id = "Basketball" onclick="filterPicked('Basketball')">Basketball</a>
+			    <a class="dropdown-item" id = "Misc" onclick="filterPicked('Misc')">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
 			  </div>
 			</div>
 
@@ -183,6 +182,7 @@
 			<button type="button" class="btn btn-danger btn-sm">Playoffs</button>
 			<button type="button" class="btn btn-danger btn-sm">World Series</button>
 			<button type="button" class="btn btn-danger btn-sm">Fun Sport Friday</button>
+			<div id="bonusButtons"></div>
 			</h4>
 
 		</div>
