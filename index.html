@@ -100,33 +100,53 @@
 			    <span class="sr-only">Toggle Dropdown</span>
 			  </button>
 			  <div class="dropdown-menu" id="filterDropdown">
-			  	<input style="height:2em; transform: translateY(-8px)" type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-				<a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
+			  	<input style="height:2em; transform: translateY(-8px)" type="text" placeholder="Search.." id="myInput" onkeyup="filterDropdown()">
+				<a class="dropdown-item filterPicked" onclick="">Baseball</a>
 			    <a class="dropdown-item" onclick="">Football</a>
 			    <a class="dropdown-item" onclick="">Hockey</a>
 			    <a class="dropdown-item" onclick="">Soccer</a>
 			    <a class="dropdown-item" onclick="">Basketball</a>
 			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
-			    <a class="dropdown-item" onclick="">Football</a>
-			    <a class="dropdown-item" onclick="">Hockey</a>
-			    <a class="dropdown-item" onclick="">Soccer</a>
-			    <a class="dropdown-item" onclick="">Basketball</a>
-			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
-			    <a class="dropdown-item" onclick="">Football</a>
-			    <a class="dropdown-item" onclick="">Hockey</a>
-			    <a class="dropdown-item" onclick="">Soccer</a>
-			    <a class="dropdown-item" onclick="">Basketball</a>
-			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
-			    <a class="dropdown-item" onclick="">Football</a>
-			    <a class="dropdown-item" onclick="">Hockey</a>
-			    <a class="dropdown-item" onclick="">Soccer</a>
-			    <a class="dropdown-item" onclick="">Basketball</a>
-			    <a class="dropdown-item" onclick="">Misc</a><a class="dropdown-item" onclick="" id="filterPicked">Baseball</a>
-			    <a class="dropdown-item" onclick="">Football</a>
-			    <a class="dropdown-item" onclick="">Hockey</a>
-			    <a class="dropdown-item" onclick="">Soccer</a>
-			    <a class="dropdown-item" onclick="">Basketball</a>
-			    <a class="dropdown-item" onclick="">Misc</a>
+			  </div>
+			</div>
+
+			<div class="btn-group">
+			  <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  	 <span id="page-select" class="caret">Teams</span>
+			    <span class="sr-only">Toggle Dropdown</span>
+			  </button>
+			  <div class="dropdown-menu" id="filterDropdown">
+			  	<input style="height:2em; transform: translateY(-8px)" type="text" placeholder="Search.." id="team-input" onkeyup="filterDropdown('drop-team','team-input')">
+				<a class="dropdown-item drop-team" id = "Angels" onclick="filterPicked('Angels')">Angels</a>
+			    <a class="dropdown-item drop-team" id = "Atheletics" onclick="filterPicked('Atheletics')">Atheletics</a>
+			    <a class="dropdown-item drop-team" id = "Astros" onclick="filterPicked('Astros')">Astros</a>
+				<a class="dropdown-item drop-team" id = "Blue Jays" onclick="filterPicked('Blue Jays')">Blue Jays</a>
+			    <a class="dropdown-item drop-team" id = "Braves" onclick="filterPicked('Braves')">Braves</a>
+			    <a class="dropdown-item drop-team" id = "Brewers" onclick="filterPicked('Brewers')">Brewers</a>
+			    <a class="dropdown-item drop-team" id = "Cardinals" onclick="filterPicked('Cardinals')">Cardinals</a>
+			    <a class="dropdown-item drop-team" id = "Cubs" onclick="filterPicked('Cubs')">Cubs</a>
+			    <a class="dropdown-item drop-team" id = "Diamondbacks" onclick="filterPicked('Diamondbacks')">Diamondbacks</a>
+			    <a class="dropdown-item drop-team" id = "Dodgers" onclick="filterPicked('Dodgers')">Dodgers</a>
+			    <a class="dropdown-item drop-team" id = "Giants" onclick="filterPicked('Giants')">Giants</a>
+			    <a class="dropdown-item drop-team" id = "Indians" onclick="filterPicked('Indians')">Indians</a>
+			    <a class="dropdown-item drop-team" id = "Mariners" onclick="filterPicked('Mariners')">Mariners</a>
+			    <a class="dropdown-item drop-team" id = "Marlins" onclick="filterPicked('Marlins')">Marlins</a>
+			    <a class="dropdown-item drop-team" id = "Mets" onclick="filterPicked('Mets')">Mets</a>
+			    <a class="dropdown-item drop-team" id = "Nationals" onclick="filterPicked('Nationals')">Nationals</a>
+			    <a class="dropdown-item drop-team" id = "Orioles" onclick="filterPicked('Orioles')">Orioles</a> 
+			    <a class="dropdown-item drop-team" id = "Padres" onclick="filterPicked('Padres')">Padres</a>
+			    <a class="dropdown-item drop-team" id = "Phillies" onclick="filterPicked('Phillies')">Phillies</a>
+			    <a class="dropdown-item drop-team" id = "Pirates" onclick="filterPicked('Pirates')">Pirates</a>
+			    <a class="dropdown-item drop-team" id = "Rangers" onclick="filterPicked('Rangers')">Rangers</a>
+			    <a class="dropdown-item drop-team" id = "Rays" onclick="filterPicked('Rays')">Rays</a>
+			    <a class="dropdown-item drop-team" id = "Reds" onclick="filterPicked('Reds')">Reds</a>
+				<a class="dropdown-item drop-team" id = "Red Sox" onclick="filterPicked('Red Sox')">Red Sox</a>
+			    <a class="dropdown-item drop-team" id = "Rockies" onclick="filterPicked('Rockies')">Rockies</a>
+			    <a class="dropdown-item drop-team" id = "Royals" onclick="filterPicked('Royals')">Royals</a>
+			    <a class="dropdown-item drop-team" id = "Tigers" onclick="filterPicked('Tigers')">Tigers</a>
+			    <a class="dropdown-item drop-team" id = "Twins" onclick="filterPicked('Twins')">Twins</a>
+			    <a class="dropdown-item drop-team" id = "White Sox" onclick="filterPicked('White Sox')">White Sox</a>
+			    <a class="dropdown-item drop-team" id = "Yankees" onclick="filterPicked('Yankees')">Yankees</a>
 			  </div>
 			</div>
 

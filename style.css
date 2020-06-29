@@ -19,7 +19,7 @@ html, body{
     background-color:#dc3545;
   }
 
-.dropdown-item#filterPicked {
+.filterPicked {
     background-color:#28a745;
   }
 
@@ -27,11 +27,11 @@ html, body{
    background-color:#565D7D;
 }
 
-.dropdown-menu#filterDropdown .dropdown-item#filterPicked:focus,.dropdown-menu#filterDropdown .dropdown-item#filterPicked:active {
+.dropdown-menu#filterDropdown .filterPicked:focus,.dropdown-menu#filterDropdown .filterPicked:active {
    background-color:#007bff;
 }
 
-.dropdown-item#filterPicked:hover {
+.filterPicked:hover {
     background-color: white;
 }
 
@@ -183,7 +183,8 @@ table th {
 }
 table td {
     width: 200px;
-    border: 1px dotted silver;
+    border: 1px;
+    overflow-wrap: break-word;
 }
 
 .fa-facebook:hover,
@@ -227,7 +228,19 @@ hr.light {
 .dropdown-menu{
     max-height: 400px;
     overflow-y: auto;
+
 }
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
 
 footer a {
   color:#d5d5d5;

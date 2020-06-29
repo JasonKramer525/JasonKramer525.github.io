@@ -32,8 +32,11 @@ function setSort(val){
 			button.setAttribute("class","btn btn-danger btn-sm");
 		}
 	}
-
+	currentPage = 0;
+	pageNumber=1;
+	updatePage();
 	readData();
+
 }
 
 function setPageSize(size){
@@ -93,7 +96,6 @@ function checkButtons(){
 function changeLoad(val){
 	for(let i=1; i<4; i++){
 		var button = document.getElementById("media-" + i);
-		console.log(button)
 		if(i==val){
 			button.setAttribute("class","btn btn-success btn-sm");
 		}
@@ -113,6 +115,7 @@ function onLoad(){
 		var searchBox = document.getElementById("searchBox");
 		searchBox.style.transform = "translateY(0px)"
 	}
+
 	readData();
 	checkButtons();
 }
@@ -233,4 +236,23 @@ function updateArray(toSort,idxArray){
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function filterDropdown(name, input){
+	var dropdown = document.getElementsByClassName(name);
+	var input = document.getElementById(input)
+	console.log(dropdown.length)
+	for(idx=0; idx<dropdown.length; idx++){
+		if(!(dropdown[idx].innerText.toUpperCase()).includes(input.value.toUpperCase())){
+			dropdown[idx].hidden="true"
+		}
+		else {
+			dropdown[idx].removeAttribute("hidden")
+		}
+
+	}
+}
+
+function filterPicked(filter) {
+	console.log(filter)
 }
