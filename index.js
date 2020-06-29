@@ -79,7 +79,11 @@ function lastPage(){
 
 function updatePage(){
 	var pageVisual = document.getElementById("current-page");
-	pageVisual.innerHTML="Showing Page " + pageNumber +  " of " + (Math.ceil(totalResults/pageTotal));
+	var tempPageNumber = pageNumber
+	if(totalResults == 0){
+		tempPageNumber = 0;
+	}
+	pageVisual.innerHTML="Showing Page " + tempPageNumber +  " of " + (Math.ceil(totalResults/pageTotal));
 }
 
 function checkButtons(){
@@ -169,6 +173,8 @@ function readData()
 
 	indeces = filterArray(indeces)
 	totalResults = indeces.length
+
+	document.getElementById("total-results").innerText = totalResults;
 
 	for(let idx=0; idx<indeces.length;idx++){
 		currentCount = currentCount + 1;
@@ -343,7 +349,7 @@ function setFilterType(type){
 		document.getElementById("inclusive").setAttribute("class","btn btn-success btn-sm");
 		document.getElementById("exclusive").setAttribute("class","btn btn-danger btn-sm");
 	}
-	
+
 	currentPage = 0;
 	pageNumber=1;
 
