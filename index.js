@@ -16,7 +16,7 @@ function filterButton(name) {
 		button.setAttribute("class","btn btn-danger btn-sm");
 		var index = currentFilters.indexOf(name);
 		currentFilters.splice(index,1);
-	}
+	} 
 }
 
 function setSort(val){
