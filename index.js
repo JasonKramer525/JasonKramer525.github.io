@@ -4,15 +4,18 @@ var currentPage = 0;
 var pageNumber = 1;
 var load = 1; //video
 var chosenSort = 0;
+var currentFilters = [];
 
-function changeColor(name) {
+function filterButton(name) {
 	let button = document.getElementById(name);
-	console.log(button.className)
 	if(button.className == "btn btn-danger btn-sm"){
 		button.setAttribute("class","btn btn-success btn-sm");
+		currentFilters.push(name)
 	}
 	else {
 		button.setAttribute("class","btn btn-danger btn-sm");
+		var index = currentFilters.indexOf(name);
+		currentFilters.splice(index,1);
 	}
 }
 
@@ -42,11 +45,9 @@ function setSort(val){
 function setPageSize(size){
 	currentPage = 0;
 	pageNumber = 1;
-	console.log(size)
 	pageTotal = size;
 	var pageSelect = document.getElementById("page-select");
-	console.log(pageSelect)
-	pageSelect.innerHTML = size;
+	pageSelect.innerText = size;
 	readData();
 	updatePage();
 	checkButtons();
@@ -131,13 +132,11 @@ function readData()
 
 	if(sortRequirements[chosenSort].value == "integer") {
 		indeces = sortWithIndecesValues(currentSort).sortIndices;
-		console.log(currentSort)
 	}
 	else{
 		indeces = sortWithIndeces(currentSort).sortIndices;
 	}
 
-console.log(chosenSort)
 	if(chosenSort == 5){
 		var numOfEmpty = currentSort.filter(function(x){ return x === ""; }).length;
 		indeces = indeces.slice(numOfEmpty).concat(indeces.slice(0,numOfEmpty))
@@ -148,7 +147,10 @@ console.log(chosenSort)
 	}
 
 	let currentCount = currentPage;
-	for(ID in videoID){
+
+	indeces = filterArray(indeces)
+
+	for(let idx=0; idx<indeces.length;idx++){
 		currentCount = currentCount + 1;
 		if(videoID[currentCount-1]) {
 			let row = tableBody.insertRow();
@@ -191,7 +193,7 @@ console.log(chosenSort)
 			sortCell.append(sortText)
 		}
 
-		if(ID>pageTotal-2){
+		if(idx>pageTotal-2){
 			break;
 		}
 	}
@@ -241,7 +243,6 @@ function numberWithCommas(x) {
 function filterDropdown(name, input){
 	var dropdown = document.getElementsByClassName(name);
 	var input = document.getElementById(input)
-	console.log(dropdown.length)
 	for(idx=0; idx<dropdown.length; idx++){
 		if(!(dropdown[idx].innerText.toUpperCase()).includes(input.value.toUpperCase())){
 			dropdown[idx].hidden="true"
@@ -260,6 +261,8 @@ function filterPicked(filter) {
 		button.className = button.className.replace(" filterPicked","")
 		var newButton = document.getElementById("temp-" + filter)
 		newButton.parentNode.removeChild(newButton)
+		var index = currentFilters.indexOf(filter);
+		currentFilters.splice(index,1);
 	}
 	else {
 		button.className += " filterPicked"
@@ -267,7 +270,20 @@ function filterPicked(filter) {
 		+  '"class="btn btn-success btn-sm"><i class="fa fa-times-circle" aria-hidden="true"></i> ' 
 		+ filter + '</button> '
 		var newButton = document.getElementById("temp-" + filter)
-		console.log(newButton)
 		newButton.setAttribute("onclick","filterPicked('" + filter + "')")
+		currentFilters.push(filter)
 	}
+
+	readData();
+}
+
+function filterArray(array){
+	for(idx in array){
+		console.log(allTags[array[idx]])
+
+
+			console.log(currentFilters.filter(value => allTags[array[idx]].includes(currentFilters[0])))
+
+	}
+	return array;
 }

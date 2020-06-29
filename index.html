@@ -98,7 +98,7 @@
 			<h4 style="text-align:left;">Filters: 
 			<div class="btn-group">
 			  <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  	 <span id="page-select" class="caret">Sports</span>
+			  	 <span class="caret">Sports</span>
 			    <span class="sr-only">Toggle Dropdown</span>
 			  </button>
 			  <div class="dropdown-menu" id="filterDropdown">
@@ -113,7 +113,7 @@
 
 			<div class="btn-group">
 			  <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  	 <span id="page-select" class="caret">Teams</span>
+			  	 <span class="caret">Teams</span>
 			    <span class="sr-only">Toggle Dropdown</span>
 			  </button>
 			  <div class="dropdown-menu" id="filterDropdown">
@@ -153,7 +153,7 @@
 
 			<div class="btn-group">
 			  <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  	 <span id="page-select" class="caret">Players</span>
+			  	 <span class="caret">Players</span>
 			    <span class="sr-only">Toggle Dropdown</span>
 			  </button>
 			  <div class="dropdown-menu" id="filterDropdown">
@@ -510,13 +510,12 @@
 				<a class="dropdown-item drop-player" id = "Zack Greinke" onclick='filterPicked("Zack Greinke" )'>Zack Greinke</a>
 				<a class="dropdown-item drop-player" id = "Zack Littell" onclick='filterPicked("Zack Littell" )'>Zack Littell</a>
 				<a class="dropdown-item drop-player" id = "Zack Wheeler" onclick='filterPicked("Zack Wheeler" )'>Zack Wheeler</a>
-
 			  </div>
 			</div>
 
-			<div class="btn-group">
+						<div class="btn-group">
 			  <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  	 <span id="page-select" class="caret">Umpires</span>
+			  	 <span class="caret">Umpires</span>
 			    <span class="sr-only">Toggle Dropdown</span>
 			  </button>
 			  <div class="dropdown-menu" id="filterDropdown">
@@ -527,33 +526,68 @@
 			  </div>
 			</div>
 
-			<button type="button" class="btn btn-danger btn-sm">Game Year</button>
-			<button type="button" class="btn btn-danger btn-sm">Video Length</button>
-			<button type="button" class="btn btn-danger btn-sm">Brawls</button>
-			<button type="button" class="btn btn-danger btn-sm">Fights</button>
-			<button type="button" class="btn btn-danger btn-sm">Ejections</button>
-			<button type="button" class="btn btn-danger btn-sm">Hit By Pitch</button>
-			<button type="button" class="btn btn-danger btn-sm">Bad Calls</button>
-			<button type="button" class="btn btn-danger btn-sm">Errors</button>
-			<button type="button" class="btn btn-danger btn-sm">Balks</button>
-			<button type="button" class="btn btn-danger btn-sm">Collisions</button>
-			<button type="button" class="btn btn-danger btn-sm">Double Plays</button>
-			<button type="button" class="btn btn-danger btn-sm">Perfect Games</button>
-			<button type="button" class="btn btn-danger btn-sm">No-Hitters</button>
-			<button type="button" class="btn btn-danger btn-sm">Stolen Bases</button>
-			<button type="button" class="btn btn-danger btn-sm">Pickoffs</button>
-			<button type="button" class="btn btn-danger btn-sm">Home Runs</button>
-			<button type="button" class="btn btn-danger btn-sm">Grand Slams</button>
-			<button type="button" class="btn btn-danger btn-sm">Walk-Offs</button>
-			<button type="button" class="btn btn-danger btn-sm">Robbed Home Runs</button>
-			<button type="button" class="btn btn-danger btn-sm">Animals</button>
-			<button type="button" class="btn btn-danger btn-sm">Lip Reading</button>
-			<button type="button" class="btn btn-danger btn-sm">Hot Mic</button>
-			<button type="button" class="btn btn-danger btn-sm">NL</button>
-			<button type="button" class="btn btn-danger btn-sm">AL</button>
-			<button type="button" class="btn btn-danger btn-sm">Playoffs</button>
-			<button type="button" class="btn btn-danger btn-sm">World Series</button>
-			<button type="button" class="btn btn-danger btn-sm">Fun Sport Friday</button>
+			<div class="btn-group">
+			  <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  	 <span class="caret">Game Year</span>
+			    <span class="sr-only">Toggle Dropdown</span>
+			  </button>
+			  <div class="dropdown-menu" id="filterDropdown">
+				<a class="dropdown-item drop-year" id = "1920" onclick='filterPicked("1920" )'>1920</a>
+				<a class="dropdown-item drop-year" id = "1924" onclick='filterPicked("1924" )'>1924</a>
+				<a class="dropdown-item drop-year" id = "1973" onclick='filterPicked("1973" )'>1973</a>
+				<a class="dropdown-item drop-year" id = "1977" onclick='filterPicked("1977" )'>1977</a>
+				<a class="dropdown-item drop-year" id = "1980" onclick='filterPicked("1980" )'>1980</a>
+				<a class="dropdown-item drop-year" id = "1984" onclick='filterPicked("1984" )'>1984</a>
+				<a class="dropdown-item drop-year" id = "1985" onclick='filterPicked("1985" )'>1985</a>
+				<a class="dropdown-item drop-year" id = "1990" onclick='filterPicked("1990" )'>1990</a>
+				<a class="dropdown-item drop-year" id = "1992" onclick='filterPicked("1992" )'>1992</a>
+				<a class="dropdown-item drop-year" id = "1993" onclick='filterPicked("1993" )'>1993</a>
+				<a class="dropdown-item drop-year" id = "1994" onclick='filterPicked("1994" )'>1994</a>
+				<a class="dropdown-item drop-year" id = "1995" onclick='filterPicked("1995" )'>1995</a>
+				<a class="dropdown-item drop-year" id = "1996" onclick='filterPicked("1996" )'>1996</a>
+				<a class="dropdown-item drop-year" id = "1998" onclick='filterPicked("1998" )'>1998</a>
+				<a class="dropdown-item drop-year" id = "1999" onclick='filterPicked("1999" )'>1999</a>
+				<a class="dropdown-item drop-year" id = "2000" onclick='filterPicked("2000" )'>2000</a>
+				<a class="dropdown-item drop-year" id = "2003" onclick='filterPicked("2003" )'>2003</a>
+				<a class="dropdown-item drop-year" id = "2004" onclick='filterPicked("2004" )'>2004</a>
+				<a class="dropdown-item drop-year" id = "2006" onclick='filterPicked("2006" )'>2006</a>
+				<a class="dropdown-item drop-year" id = "2009" onclick='filterPicked("2009" )'>2009</a>
+				<a class="dropdown-item drop-year" id = "2010" onclick='filterPicked("2010" )'>2010</a>
+				<a class="dropdown-item drop-year" id = "2011" onclick='filterPicked("2011" )'>2011</a>
+				<a class="dropdown-item drop-year" id = "2014" onclick='filterPicked("2014" )'>2014</a>
+				<a class="dropdown-item drop-year" id = "2015" onclick='filterPicked("2015" )'>2015</a>
+				<a class="dropdown-item drop-year" id = "2016" onclick='filterPicked("2016" )'>2016</a>
+				<a class="dropdown-item drop-year" id = "2017" onclick='filterPicked("2017" )'>2017</a>
+				<a class="dropdown-item drop-year" id = "2018" onclick='filterPicked("2018" )'>2018</a>
+				<a class="dropdown-item drop-year" id = "2019" onclick='filterPicked("2019" )'>2018</a>
+				<a class="dropdown-item drop-year" id = "2020" onclick='filterPicked("2020" )'>2020</a>
+			  </div>
+			</div>
+
+			<button type="button" class="btn btn-danger btn-sm" id="Brawl" onclick="filterButton('Brawl')">Brawls</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Fight" onclick="filterButton('Fight')">Fights</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Ejection" onclick="filterButton('Ejection')">Ejections</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Hit By Pitch" onclick="filterButton('Hit By Pitch')">Hit By Pitch</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Bad Call" onclick="filterButton('Bad Call')">Bad Calls</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Error" onclick="filterButton('Error')">Errors</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Balk" onclick="filterButton('Balk')">Balks</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Collision" onclick="filterButton('Collision')">Collisions</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Double Play" onclick="filterButton('Double Play')">Double Plays</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Perfect Game" onclick="filterButton('Perfect Game')">Perfect Games</button>
+			<button type="button" class="btn btn-danger btn-sm" id="No-Hitter" onclick="filterButton('No-Hitter')">No-Hitters</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Stolen Base" onclick="filterButton('Stolen Base')">Stolen Bases</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Home Run" onclick="filterButton('Home Run')">Home Runs</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Grand Slam" onclick="filterButton('Grand Slam')">Grand Slams</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Walk-Off" onclick="filterButton('Walk-Off')">Walk-Offs</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Robbed Home Run" onclick="filterButton('Robbed Home Run')">Robbed Home Runs</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Animals" onclick="filterButton('Animals')">Animals</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Lip Reading" onclick="filterButton('Lip Reading')">Lip Reading</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Hot Mic" onclick="filterButton('Hot Mic')">Hot Mic</button>
+			<button type="button" class="btn btn-danger btn-sm" id="NL" onclick="filterButton('NL')">NL</button>
+			<button type="button" class="btn btn-danger btn-sm" id="AL" onclick="filterButton('AL')">AL</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Playoffs" onclick="filterButton('Playoffs')">Playoffs</button>
+			<button type="button" class="btn btn-danger btn-sm" id="World Series" onclick="filterButton('World Series')">World Series</button>
+			<button type="button" class="btn btn-danger btn-sm" id="Fun Sport Friday" onclick="filterButton('Fun Sport Friday')">Fun Sport Friday</button>
 			<div id="bonusButtons"></div>
 			</h4>
 
