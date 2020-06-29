@@ -155,13 +155,14 @@ function readData()
 	}
 
 	let currentCount = currentPage;
+	console.log("COUNT " + currentCount)
 
 	indeces = filterArray(indeces)
 	totalResults = indeces.length
 
 	for(let idx=0; idx<indeces.length;idx++){
 		currentCount = currentCount + 1;
-		if(videoID[currentCount-1]) {
+		if(videoID[indeces[currentCount-1]]) {
 			let row = tableBody.insertRow();
 			row.className = "d-flex"
 			let countCell = row.insertCell(0);
@@ -314,6 +315,7 @@ function filterArray(array){
 		}
 
 	}
+	console.log(newIndeces)
 	return newIndeces;
 }
 
