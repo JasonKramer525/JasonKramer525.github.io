@@ -6,6 +6,8 @@ var load = 1; //video
 var chosenSort = 0;
 var currentFilters = [];
 var filterType = 0
+var searchValue = ""
+
 
 function filterButton(name) {
 	let button = document.getElementById(name);
@@ -51,6 +53,8 @@ function setSort(val){
 }
 
 function setPageSize(size){
+	if(size == pageTotal)
+		return;
 	currentPage = 0;
 	pageNumber = 1;
 	pageTotal = size;
@@ -87,9 +91,6 @@ function updatePage(){
 }
 
 function checkButtons(){
-	console.log("TOTAL" + totalResults)
-	console.log("")
-
 	if(Math.ceil(totalResults/pageTotal) == pageNumber){
 		document.getElementById("next-button").hidden="true"
 		document.getElementById("next-button-2").hidden="true"
@@ -169,9 +170,11 @@ function readData()
 	}
 
 	let currentCount = currentPage;
-	console.log("COUNT " + currentCount)
 
 	indeces = filterArray(indeces)
+
+	indeces = searchTitles(indeces)
+
 	totalResults = indeces.length
 
 	document.getElementById("total-results").innerText = totalResults;
@@ -356,4 +359,29 @@ function setFilterType(type){
 	readData();
 	updatePage();
 	checkButtons();
+}
+
+function newSearch(){
+	searchValue = document.getElementById("searchBox").value;
+	currentPage = 0;
+	pageNumber = 1;
+
+	readData();
+	updatePage();
+	checkButtons();
+}
+
+function searchTitles(array){
+	if(searchValue == "")
+		return array;
+
+	newArray = []
+
+	for(idx in array){
+		if((videoTitle[array[idx]]).toUpperCase().includes(searchValue.toUpperCase()))
+			newArray.push(array[idx])
+	}
+
+	return newArray
+
 }
