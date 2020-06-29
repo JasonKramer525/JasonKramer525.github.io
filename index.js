@@ -8,7 +8,6 @@ var currentFilters = [];
 var filterType = 0
 var searchValue = ""
 
-
 function filterButton(name) {
 	let button = document.getElementById(name);
 	if(button.className == "btn btn-danger btn-sm"){
