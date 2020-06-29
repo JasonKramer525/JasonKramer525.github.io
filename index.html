@@ -615,8 +615,8 @@
 
 		<div class="col-lg-6" style="text-align:left;">
 			<h4 style="text-align:left;">Inclusive vs Exclusive:</h4>
-				<button type="button" class="btn btn-success btn-sm" style="transform:translateY(-3px)">Exclusive</button> At least one of the tags will be present<br>
-				<button type="button" class="btn btn-danger btn-sm" style="transform:translateY(-4px)">Inclusive</button> All tags will be present<br>
+				<button type="button" id="exclusive" class="btn btn-success btn-sm" style="transform:translateY(-3px)" onclick="setFilterType(0)">Exclusive</button> At least one of the tags will be present<br>
+				<button type="button" id="inclusive" class="btn btn-danger btn-sm" style="transform:translateY(-4px)" onclick="setFilterType(1)">Inclusive</button> All tags will be present<br>
 		</div>
 		<div class="col-lg-6 col-xs-12 form-group">
 			For quicker load times, choose to show clickable thumbnails or links instead of videos<br>

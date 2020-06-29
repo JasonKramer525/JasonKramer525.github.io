@@ -19,6 +19,9 @@ function filterButton(name) {
 		currentFilters.splice(index,1);
 	} 
 
+	currentPage = 0;
+	pageNumber=1;
+
 	readData();
 	updatePage();
 	checkButtons();
@@ -98,6 +101,13 @@ function checkButtons(){
 	else {
 		document.getElementById("previous-button").removeAttribute("hidden")
 		document.getElementById("previous-button-2").removeAttribute("hidden")
+	}
+
+	if(totalResults==0){
+		document.getElementById("next-button").hidden="true"
+		document.getElementById("next-button-2").hidden="true"
+		document.getElementById("previous-button").hidden="true"
+		document.getElementById("previous-button-2").hidden="true"
 	}
 }
 
@@ -283,7 +293,8 @@ function filterPicked(filter) {
 		newButton.setAttribute("onclick","filterPicked('" + filter + "')")
 		currentFilters.push(filter)
 	}
-
+	currentPage = 0;
+	pageNumber=1;
 	readData();
 	updatePage();
 	checkButtons();
@@ -320,5 +331,23 @@ function filterArray(array){
 }
 
 function setFilterType(type){
+	if(type == filterType){
+		return;
+	}
 	filterType = type;
+	if(type == 0){
+		document.getElementById("exclusive").setAttribute("class","btn btn-success btn-sm");
+		document.getElementById("inclusive").setAttribute("class","btn btn-danger btn-sm");
+	}
+	else {
+		document.getElementById("inclusive").setAttribute("class","btn btn-success btn-sm");
+		document.getElementById("exclusive").setAttribute("class","btn btn-danger btn-sm");
+	}
+	
+	currentPage = 0;
+	pageNumber=1;
+
+	readData();
+	updatePage();
+	checkButtons();
 }
