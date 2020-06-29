@@ -5,6 +5,7 @@ var pageNumber = 1;
 var load = 1; //video
 var chosenSort = 0;
 var currentFilters = [];
+var filterType = 0
 
 function filterButton(name) {
 	let button = document.getElementById(name);
@@ -17,6 +18,10 @@ function filterButton(name) {
 		var index = currentFilters.indexOf(name);
 		currentFilters.splice(index,1);
 	} 
+
+	readData();
+	updatePage();
+	checkButtons();
 }
 
 function setSort(val){
@@ -37,9 +42,9 @@ function setSort(val){
 	}
 	currentPage = 0;
 	pageNumber=1;
-	updatePage();
 	readData();
-
+	updatePage();
+	checkButtons();
 }
 
 function setPageSize(size){
@@ -75,6 +80,9 @@ function updatePage(){
 }
 
 function checkButtons(){
+	console.log("TOTAL" + totalResults)
+	console.log("")
+
 	if(Math.ceil(totalResults/pageTotal) == pageNumber){
 		document.getElementById("next-button").hidden="true"
 		document.getElementById("next-button-2").hidden="true"
@@ -149,6 +157,7 @@ function readData()
 	let currentCount = currentPage;
 
 	indeces = filterArray(indeces)
+	totalResults = indeces.length
 
 	for(let idx=0; idx<indeces.length;idx++){
 		currentCount = currentCount + 1;
@@ -275,15 +284,39 @@ function filterPicked(filter) {
 	}
 
 	readData();
+	updatePage();
+	checkButtons();
 }
 
 function filterArray(array){
+	if (currentFilters.length == 0)
+		return array;
+	let newIndeces = []
+
 	for(idx in array){
-		console.log(allTags[array[idx]])
 
-
-			console.log(currentFilters.filter(value => allTags[array[idx]].includes(currentFilters[0])))
+		overlappingFilters = []
+		for(filter in currentFilters){
+			if(allTags[array[idx]].includes(currentFilters[filter]))
+				overlappingFilters.push(currentFilters[filter])
+			//console.log(currentFilters.filter(value => allTags[array[idx]].includes(currentFilters[0])))
+		}
+		
+		if(filterType == 0){
+			if(overlappingFilters.length > 0){
+				newIndeces.push(array[idx])
+			}
+		}
+		else {
+			if(overlappingFilters.length == currentFilters.length){
+				newIndeces.push(array[idx])
+			}
+		}
 
 	}
-	return array;
+	return newIndeces;
+}
+
+function setFilterType(type){
+	filterType = type;
 }
